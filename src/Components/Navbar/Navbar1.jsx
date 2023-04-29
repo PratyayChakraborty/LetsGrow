@@ -57,7 +57,7 @@ const Navbar1 = () => {
                             <ModalCloseButton />
                             <ModalBody pb={6}>
                                 <FormControl>
-                                    <FormLabel>First name</FormLabel>
+                                    <FormLabel>abc name</FormLabel>
                                     <Input ref={initialRef} placeholder='First name' />
                                 </FormControl>
 

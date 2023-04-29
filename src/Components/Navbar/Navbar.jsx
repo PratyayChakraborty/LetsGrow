@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import {
-  Box, Heading, Text, Button, Flex, Image, Modal,
+  Button, Modal,
   ModalOverlay,
   ModalContent,
   ModalHeader,
@@ -12,7 +12,9 @@ import {
   FormLabel,
   FormControl
 } from '@chakra-ui/react'
-import growup_4x from '../../assets/growup_4x.webp'
+
+
+
 const Navbar = () => {
 
   const modal1 = useDisclosure()

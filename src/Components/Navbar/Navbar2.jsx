@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {
     Box, Heading, Text, Button, Flex, Image, Modal,
     ModalOverlay,
@@ -11,15 +11,39 @@ import {
     Input,
     FormLabel,
     FormControl,
-    ButtonGroup,
-    Wrap, WrapItem
 } from '@chakra-ui/react'
 import '../../Styles/nav.css'
 const Navbar2 = () => {
     const modal1 = useDisclosure()
     const modal2 = useDisclosure()
-    const initialRef = React.useRef(null)
-    const finalRef = React.useRef(null)
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [lname, lSetname] = useState('')
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        const data = { name, email, password };
+        fetch("/api/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        })
+          .then(response => {
+            if (response.ok) {
+              alert("Registration successful!");
+            } else {
+              alert("Registration failed.");
+            }
+          })
+          .catch(error => {
+            console.error(error);
+            alert("An error occurred. Please try again later.");
+          });
+      }
+
     return (
         <Flex margin={"auto"} padding={"10px"}
             style={{
@@ -38,8 +62,7 @@ const Navbar2 = () => {
             <Flex>
                 <button className="btn btn-outline-primary" id="nav-btn" onClick={modal1.onOpen}>Sign UP
                     <Modal
-                        initialFocusRef={initialRef}
-                        finalFocusRef={finalRef}
+                        
                         isOpen={modal1.isOpen}
                         onClose={modal1.onClose}
                         style={{ color: "black", }}
@@ -48,25 +71,29 @@ const Navbar2 = () => {
                         <ModalContent>
                             <ModalHeader>Create your account</ModalHeader>
                             <ModalCloseButton />
+                            <form onSubmit={handleSubmit}>
                             <ModalBody pb={6}>
-                                <FormControl>
+                                <FormControl >
                                     <FormLabel>First name</FormLabel>
-                                    <Input ref={initialRef} placeholder='First name' />
+                                    <FormLabel></FormLabel>
+                                    <Input  placeholder='First name' type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} required />
                                 </FormControl>
 
                                 <FormControl mt={4}>
                                     <FormLabel>Last name</FormLabel>
-                                    <Input placeholder='Last name' />
+                                    <Input placeholder='Last name' type="text" id="lname" value={lname} onChange={(e) => lSetname(e.target.value)} required />
                                 </FormControl>
                                 <FormControl>
+
                                     <FormLabel>Email</FormLabel>
-                                    <Input ref={initialRef} placeholder='Email' />
+                                    <Input  placeholder='Email' type="text" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required  />
                                 </FormControl>
                                 <FormControl mt={4}>
                                     <FormLabel>Password</FormLabel>
-                                    <Input placeholder='Password' />
+                                    <Input placeholder='Password' type="text" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required  />
                                 </FormControl>
                             </ModalBody>
+                                </form>
 
                             <ModalFooter>
                                 <Button colorScheme='blue' mr={3}>
@@ -80,8 +107,6 @@ const Navbar2 = () => {
 
                 <button className="btn btn-outline-success" id="nav-btn" onClick={modal2.onOpen} >Sign IN
                     <Modal
-                        initialFocusRef={initialRef}
-                        finalFocusRef={finalRef}
                         isOpen={modal2.isOpen}
                         onClose={modal2.onClose}
                         style={{ color: "black", }}
@@ -93,7 +118,7 @@ const Navbar2 = () => {
                             <ModalBody pb={6}>
                                 <FormControl>
                                     <FormLabel>Email</FormLabel>
-                                    <Input ref={initialRef} placeholder='Email' />
+                                    <Input placeholder='Email' />
                                 </FormControl>
 
                                 <FormControl mt={4}>

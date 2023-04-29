@@ -6,8 +6,8 @@ const Home3rd = () => {
     return (
         <Box className="promo-section">
 
-            <Box class="container" data-aos="fade-up">
-                <Heading class="h5 text-primary">Process</Heading>
+            <Box className="container" data-aos="fade-up">
+                <Heading className="h5 text-primary">Process</Heading>
                 <Heading color="white">It's Easier Than Making A Cup Of Tea !</Heading>
                 <Text color="white">Your social media success is largely dependent on the number of likes, comments and followers you have.</Text>
             </Box>

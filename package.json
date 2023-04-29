@@ -19,11 +19,8 @@
     "react-burger-menu": "^3.0.9",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
-<<<<<<< HEAD
     "react-redux": "^8.0.5",
-=======
     "react-pro-sidebar": "^1.0.0",
->>>>>>> e029f02e5540e761ac5a26d92e481c93b2a9f78b
     "react-router-dom": "^6.10.0",
     "react-scripts": "5.0.1",
     "react-whatsapp": "^0.3.0",

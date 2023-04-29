@@ -15,9 +15,13 @@ import {
     Wrap, WrapItem
 } from '@chakra-ui/react'
 
-import { slide as Menu } from 'react-burger-menu';
+
+
+
+
 
 import '../../Styles/nav.css'
+import SlideBar from '../SlidBar/SlidBar';
 const Navbar2 = () => {
     const modal1 = useDisclosure()
     const modal2 = useDisclosure()
@@ -37,7 +41,7 @@ const Navbar2 = () => {
 
                 }} >
                 
-
+                <SlideBar></SlideBar>
                 
 
                 <a href="/"><Box ><Heading fontSize={"15px"} color="white" padding={"10px"} backgroundColor={"teal"} margin={"auto"} marginRight={"10px"} borderRadius={"10px"} >Let's Grow</Heading></Box></a>
@@ -56,9 +60,9 @@ const Navbar2 = () => {
 
 
 
-                {/* slidber */}
+            
 
-
+                
 
                 
                 

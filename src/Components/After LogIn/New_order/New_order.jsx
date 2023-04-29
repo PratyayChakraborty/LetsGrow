@@ -21,6 +21,7 @@ import money_min from "../../../assets/money_min.webp"
 import s52pi6rq9wjyg50b from "../../../assets/s52pi6rq9wjyg50b.png"
 import budgetmin from "../../../assets/budgetmin.webp"
 import book from "../../../assets/book.webp"
+import { Link } from "react-router-dom"
 
 
 
@@ -65,7 +66,9 @@ const New_order = () => {
                     <Image src={money_min} margin="auto" width="80px" height="80px"></Image>
                     <Text bg={"whatsapp.500"} margin="auto" color="white" borderRadius={"10px"} fontWeight="bold" w="60%" >₹{0.00}</Text>
                     <Text color={"white"}>Current Balance</Text>
-                    <Button background="blue.500">Add Funds</Button>
+                    <Link to={"/Payment"}>
+                        <Button background="blue.500">Add Funds</Button>
+                    </Link>
 
                 </Box>
 
@@ -80,7 +83,11 @@ const New_order = () => {
                     <Image src={s52pi6rq9wjyg50b} margin="auto" width="80px" height="80px"></Image>
                     <Text bg={"whatsapp.500"} margin="auto" color="white" borderRadius={"10px"} fontWeight="bold" w="60%" >85471</Text>
                     <Text color={"white"}>Total Users</Text>
-                    <Button background="blue.500">My Account</Button>
+
+                    <Link to={"/Account"}>
+
+                        <Button background="blue.500">My Account</Button>
+                    </Link>
 
                 </Box>
 
@@ -95,7 +102,11 @@ const New_order = () => {
                     <Image src={budgetmin} margin="auto" width="80px" height="80px"></Image>
                     <Text bg={"whatsapp.500"} margin="auto" color="white" borderRadius={"10px"} fontWeight="bold" w="60%" >95487</Text>
                     <Text color={"white"}>All Orders</Text>
-                    <Button background="blue.500">View Orders</Button>
+
+                    <Link to={"/Orders"}>
+
+                        <Button background="blue.500">View Orders</Button>
+                    </Link>
 
                 </Box>
             </HStack>
@@ -111,7 +122,7 @@ const New_order = () => {
                     lg: "row"
                 }}
                 gap={"20px"} >
-                <VStack gap={"20px"} width={{ base: "80%", md: "50%", lg: "50%" }} bg={"rgb(120,120,120,0.08)"} p={"20px"}
+                <VStack gap={"42px"} width={{ base: "80%", md: "50%", lg: "50%" }} bg={"rgb(120,120,120,0.08)"} p={"20px"}
                     borderRadius={"20px 0px"}
                 >
                     <FormControl>
@@ -157,7 +168,7 @@ const New_order = () => {
                 <VStack borderRadius={"10px"} width={{ base: "80%", md: "50%", lg: "50%" }} bg={"rgb(180,180,180,0.15)"} justifyContent={"left"} textAlign={"left"} color={"white"} padding="10px">
                     <HStack  >
                         <Image src={book} width="40px"></Image>
-                        <Heading fontSize={"30px"}>
+                        <Heading fontSize={"25px"}>
                             Instructions
                         </Heading>
                     </HStack>

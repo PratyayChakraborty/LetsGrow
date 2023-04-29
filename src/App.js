@@ -7,6 +7,7 @@ import AllRoutes from './Pages/AllRoutes';
 import Footer from './Pages/Footer';
 
 import { Button, ButtonGroup,Wrap } from '@chakra-ui/react'
+import Chat_Button from "./Components/Chat_Button/Chat_Button";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
       {/* <Navbar /> */}
       {/* <Navbar1/> */}
       <Navbar2 />
-      <AllRoutes/>
+      <AllRoutes />
+      <Chat_Button/>
       <Footer/>
     </div>
   );

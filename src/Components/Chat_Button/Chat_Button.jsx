@@ -44,7 +44,7 @@ const Chat_Button = () => {
 
     };
     const { isOpen, onToggle } = useDisclosure()
-    const ss = {chat4}
+    const ss = { chat4 }
     return (
         <>
             <VStack
@@ -62,14 +62,18 @@ const Chat_Button = () => {
                     (
                         <SlideFade in={isOpen} >
                             <VStack gap="10px">
-                                <VStack padding={"2px"} border={"1px solid white"} width="50px" borderRadius={"50%"}>
-                                    <Image src={Insta} width={"60px"} borderRadius={"50%"} ></Image>
+                                <a href="https://www.instagram.com/pratyay_adr999/?next=%2F" target="_blank">
+                                    <VStack padding={"2px"} border={"1px solid white"} width="50px" borderRadius={"50%"}>
+                                        <Image src={Insta} width={"60px"} borderRadius={"50%"} ></Image>
 
-                                </VStack>
-                                <VStack padding={"2px"} border={"1px solid white"} width="50px" borderRadius={"50%"}>
-                                    <Image src={WhatsApp} width={"60px"} borderRadius={"50%"} ></Image>
+                                    </VStack>
+                                </a>
+                                <a href="https://wa.me/916297386065?text=Hello" target="_blank">
+                                    <VStack padding={"2px"} border={"1px solid white"} width="50px" borderRadius={"50%"} >
+                                        <Image src={WhatsApp} width={"60px"} borderRadius={"50%"} ></Image>
 
-                                </VStack>
+                                    </VStack>
+                                </a>
                             </VStack>
                         </SlideFade>
                     )
@@ -81,17 +85,17 @@ const Chat_Button = () => {
                 >
                     <Image id="chat_btn" src={chat4} width={"50px"} borderRadius={"50%"}
 
-                    onClick={onToggle}
-                        
+                        onClick={onToggle}
+
                     ></Image>
-            </VStack>
-        </VStack >
+                </VStack>
+            </VStack >
 
 
 
 
 
-            {/* <ReactWhatsapp number="6297386065" message="Hello World!!!" /> */ }
+            {/* <ReactWhatsapp number="6297386065" message="Hello World!!!" /> */}
 
         </>
     )
